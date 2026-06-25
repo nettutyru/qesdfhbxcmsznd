@@ -1,0 +1,623 @@
+[
+    {
+        "log": {
+            "level": "warn",
+            "timestamp": true
+        },
+        "dns": {
+            "servers": [
+                {
+                    "tag": "remote",
+                    "address": "https://1.1.1.1/dns-query",
+                    "detour": "select"
+                },
+                {
+                    "tag": "local",
+                    "address": "https://223.5.5.5/dns-query",
+                    "detour": "direct"
+                }
+            ],
+            "final": "remote",
+            "strategy": "prefer_ipv4"
+        },
+        "inbounds": [
+            {
+                "type": "tun",
+                "tag": "tun-in",
+                "address": [
+                    "172.19.0.1/30",
+                    "fdfe:dcba:9876::1/126"
+                ],
+                "auto_route": true,
+                "strict_route": true,
+                "stack": "mixed"
+            },
+            {
+                "type": "mixed",
+                "tag": "mixed-in",
+                "listen": "127.0.0.1",
+                "listen_port": 2080
+            }
+        ],
+        "outbounds": [
+            {
+                "type": "selector",
+                "tag": "select",
+                "outbounds": [
+                    "auto",
+                    "🇪🇺 🚀 Авто-выбор",
+                    "🇪🇪 Эстония [⚡️Быстрый]",
+                    "🇳🇱 Нидерланды [⚡️Быстрый]",
+                    "🇫🇮 Финляндия [⚡️Быстрый]",
+                    "🇩🇪 Германия",
+                    "🇺🇸 США",
+                    "🇨🇭 Швейцария",
+                    "🇫🇷 Франция",
+                    "🇵🇱 Польша",
+                    "🇷🇺 ⚡️ YouTube без рекламы",
+                    "🇷🇺 ⭐️ Обход глушилок - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #2 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #3 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #4 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #5 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #6 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #7 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #8 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #9 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #10 - LTE"
+                ],
+                "default": "auto"
+            },
+            {
+                "type": "urltest",
+                "tag": "auto",
+                "outbounds": [
+                    "🇪🇺 🚀 Авто-выбор",
+                    "🇪🇪 Эстония [⚡️Быстрый]",
+                    "🇳🇱 Нидерланды [⚡️Быстрый]",
+                    "🇫🇮 Финляндия [⚡️Быстрый]",
+                    "🇩🇪 Германия",
+                    "🇺🇸 США",
+                    "🇨🇭 Швейцария",
+                    "🇫🇷 Франция",
+                    "🇵🇱 Польша",
+                    "🇷🇺 ⚡️ YouTube без рекламы",
+                    "🇷🇺 ⭐️ Обход глушилок - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #2 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #3 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #4 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #5 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #6 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #7 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #8 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #9 - LTE",
+                    "🇷🇺 ⭐️ Обход глушилок #10 - LTE"
+                ],
+                "url": "https://www.gstatic.com/generate_204",
+                "interval": "10m",
+                "tolerance": 50
+            },
+            {
+                "type": "vless",
+                "tag": "🇪🇺 🚀 Авто-выбор",
+                "server": "login.xwhiteness.site",
+                "server_port": 443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "flow": "xtls-rprx-vision",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "login.xwhiteness.site",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "4jPGPxgAfPGFCwBKugAXAnHjYU-EXbm-Y1vgKU8LtVU"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇪🇪 Эстония [⚡️Быстрый]",
+                "server": "83.147.255.185",
+                "server_port": 2443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇳🇱 Нидерланды [⚡️Быстрый]",
+                "server": "83.147.255.185",
+                "server_port": 3443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇫🇮 Финляндия [⚡️Быстрый]",
+                "server": "83.147.255.185",
+                "server_port": 4443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇩🇪 Германия",
+                "server": "83.147.255.185",
+                "server_port": 443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇺🇸 США",
+                "server": "45.151.102.99",
+                "server_port": 443,
+                "uuid": "e550b552-dd90-41ce-9e52-185700b04898",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "maps.apple.com",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "gr7DAOBqoNiHEUhWZQh3nSqBOmg6QwmRC0HKj7TOsUk",
+                        "short_id": "2da4299da566b7"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "your-custom-path"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇨🇭 Швейцария",
+                "server": "193.233.216.250",
+                "server_port": 6443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇫🇷 Франция",
+                "server": "83.147.255.153",
+                "server_port": 8443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇵🇱 Польша",
+                "server": "83.147.255.185",
+                "server_port": 15443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⚡️ YouTube без рекламы",
+                "server": "svr.sempai.site",
+                "server_port": 443,
+                "uuid": "db160f6f-5c0e-406c-98b2-697ff8be043a",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "www.amd.com",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "wHZuJlIoj2BDobfR1bjpIsNTc0ZrZ3mHGwLZPhGVER4",
+                        "short_id": "3b826a848373c5e4"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок - LTE",
+                "server": "176.109.85.81",
+                "server_port": 10443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #2 - LTE",
+                "server": "176.109.88.216",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "YvhcuqXRqPigT7_rp9vsV5LAdxXHN8eWB_17SchS_S8"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #3 - LTE",
+                "server": "176.109.88.216",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "firefox"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "YvhcuqXRqPigT7_rp9vsV5LAdxXHN8eWB_17SchS_S8"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #4 - LTE",
+                "server": "176.109.88.216",
+                "server_port": 10443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "WF3RXrggPm9ILy5KS7-N9rfBi7d1rgZAkK4X2Owstlk"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #5 - LTE",
+                "server": "176.109.88.216",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "5post-gate.x5.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "qq"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "YvhcuqXRqPigT7_rp9vsV5LAdxXHN8eWB_17SchS_S8"
+                    }
+                },
+                "transport": {
+                    "type": "grpc",
+                    "service_name": "grpc"
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #6 - LTE",
+                "server": "s22244.cdn.ngenix.net",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "s22244.cdn.ngenix.net",
+                    "alpn": [
+                        "h3",
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    }
+                },
+                "transport": {
+                    "type": "ws",
+                    "path": "/api/v2/estweb",
+                    "headers": {
+                        "Host": "s22244.cdn.ngenix.net"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #7 - LTE",
+                "server": "s22244.cdn.ngenix.net",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "s22244.cdn.ngenix.net",
+                    "alpn": [
+                        "h3",
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    }
+                },
+                "transport": {
+                    "type": "ws",
+                    "path": "/api/v2/auweb",
+                    "headers": {
+                        "Host": "s22244.cdn.ngenix.net"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #8 - LTE",
+                "server": "s22244.cdn.ngenix.net",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "s22244.cdn.ngenix.net",
+                    "alpn": [
+                        "h3",
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    }
+                },
+                "transport": {
+                    "type": "ws",
+                    "path": "/api/v2/intoweb",
+                    "headers": {
+                        "Host": "s22244.cdn.ngenix.net"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #9 - LTE",
+                "server": "api.rodina-platform.online",
+                "server_port": 2072,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "max.ru",
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "firefox"
+                    },
+                    "reality": {
+                        "enabled": true,
+                        "public_key": "Ii9Wmi9ozX7Z9Vf3n1xp2lqUw0pmfXVdOXjdLGLMSHs",
+                        "short_id": "7016808acbb46323"
+                    }
+                }
+            },
+            {
+                "type": "vless",
+                "tag": "🇷🇺 ⭐️ Обход глушилок #10 - LTE",
+                "server": "s46724.cdn.ngenix.net",
+                "server_port": 443,
+                "uuid": "cbe488de-816e-4c29-ad4b-b0b7848dc900",
+                "packet_encoding": "xudp",
+                "tls": {
+                    "enabled": true,
+                    "server_name": "s46724.cdn.ngenix.net",
+                    "alpn": [
+                        "h3",
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "utls": {
+                        "enabled": true,
+                        "fingerprint": "chrome"
+                    }
+                },
+                "transport": {
+                    "type": "ws",
+                    "path": "/api/user",
+                    "headers": {
+                        "Host": "s46724.cdn.ngenix.net"
+                    }
+                }
+            },
+            {
+                "type": "direct",
+                "tag": "direct"
+            },
+            {
+                "type": "dns",
+                "tag": "dns-out"
+            }
+        ],
+        "route": {
+            "rules": [
+                {
+                    "action": "sniff"
+                },
+                {
+                    "protocol": "dns",
+                    "action": "hijack-dns"
+                },
+                {
+                    "ip_is_private": true,
+                    "outbound": "direct"
+                }
+            ],
+            "final": "select",
+            "auto_detect_interface": true
+        },
+        "experimental": {
+            "cache_file": {
+                "enabled": true
+            },
+            "clash_api": {
+                "external_controller": "127.0.0.1:9090"
+            }
+        }
+    }
+]
